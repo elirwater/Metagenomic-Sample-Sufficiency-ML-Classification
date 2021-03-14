@@ -69,25 +69,4 @@ def quick_run():
 
 
 
-#quick_run()
-
-
-#initialize(True, 10, 'Withholding Score', 'PGLibraryQC_dump_20200717.tsv')
-#print(quick_run())
-#label_object = label_classes.QCDumpLabels(feature_data, 'PGLibraryQC_dump_20200717.tsv', 1).csv_handler()
-#run_samples.run_samples('fake_input_samples.tsv')
-
-
-'''
-labels = label_object.generate_binary_labels()
-
-    features = preprocessing.normalize(label_object.list_features())
-
-
-    results.roc_curve_grapher(features, labels)
-
-'''
-
-
-
 

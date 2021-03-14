@@ -277,18 +277,12 @@ def compare_predictions(ground_truth, features, labels):
 
 
 
-
-
-
-    # need to normalize features!!!!!
-
-
 # Saves the best trained model to the disk
 def save_top_model(features, y_labels, input_classifier):
     clf = input_classifier.fit(features, y_labels)
 
-    #filename = 'best_model.sav'
-    #pickle.dump(clf, open(filename, 'wb'))
+    filename = 'best_model.sav'
+    pickle.dump(clf, open(filename, 'wb'))
 
 
 

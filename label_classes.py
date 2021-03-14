@@ -2,7 +2,7 @@
 from abc import ABC, abstractmethod
 import csv
 import numpy as np
-import non_numpy_ml_runner
+import classification_ml_runner
 
 
 # Represents an interface for all the different label sets being used
@@ -71,8 +71,8 @@ class QCDumpLabels(FeatureLabelsInterface):
 
     # Runs ML models from non_numpy_ml_runner python file
     def run_ml(self, normalization):
-        results = non_numpy_ml_runner.run_ml_algorithms(self.list_features(), self.list_labels(), self.csv_name,
-                                                        self.runs, normalization)
+        results = classification_ml_runner.run_ml_algorithms(self.list_features(), self.list_labels(), self.csv_name,
+                                                             self.runs, normalization)
         return results
 
     # For ROC graphing using binary classification
@@ -141,8 +141,8 @@ class QCDBLabels(FeatureLabelsInterface):
     # Runs ML models from non_numpy_ml_runner python file
     def run_ml(self, normalization):
         features = self.list_features()
-        results = non_numpy_ml_runner.run_ml_algorithms(features, self.list_labels(), self.csv_name,
-                                                        self.runs, normalization)
+        results = classification_ml_runner.run_ml_algorithms(features, self.list_labels(), self.csv_name,
+                                                             self.runs, normalization)
         return results
 
 
@@ -168,7 +168,7 @@ class PostMortem2019Labels(FeatureLabelsInterface):
                 out_array.append(row_dict)
         return out_array
 
-    # INCOMPLETE: Multiple samples with varying dates, don't know which one is which
+
     def create_training_set(self):
         feature_array = self.feature_array
         label_array = self.csv_handler()
@@ -197,12 +197,8 @@ class PostMortem2019Labels(FeatureLabelsInterface):
 
         return out_feature_array, out_label_array
 
-    def list_features(self):
-        pass
 
-    # Creates a list of all labels corresponding with features
-    def list_labels(self):
-        pass
+
 
 
 
